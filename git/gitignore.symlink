@@ -9,3 +9,6 @@ Thumbs.db
 # Applications
 .sass-cache/*
 .idea/*
+node_modules
+.env
+*.css.map
