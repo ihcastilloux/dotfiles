@@ -1,9 +1,16 @@
 # Get OS name
 OS="$(uname)"
 
+# Tools
+alias drush8="composer global remove drush/drush && composer global require drush/drush:8.* && drush version"
+alias drush7="composer global remove drush/drush && composer global require drush/drush:7.* && drush version"
+
+
 # Shortcuts
 alias ..="cd .."
 alias ~="cd ~"
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias sshconfig="vi ~/.ssh/config"
 
 # Directory listing 
 # enable color support of ls and also add handy aliases
@@ -19,12 +26,12 @@ fi
 alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
+
 alias dus="sudo du -csh"
 
 # Vi
 alias v="vim"
 alias vi="vim"
-alias vic="vim -c 'execute \"silent !echo \" . &fileencoding | q'"
 
 # Bash
 alias br="vi ~/.bashrc && source ~/.bashrc"
@@ -91,6 +98,7 @@ esac
 alias dbstart="services db start"
 alias dbstop="services db stop"
 alias dbrestart="services db restart"
+alias dbconfig="sudo vi /etc/my.cnf"
 
 case $OS in
 	Darwin)
@@ -106,9 +114,8 @@ case $OS in
 	*) alias php="php";;
 esac
 
-alias phpini="php -i | grep 'Loaded Configuration File'"
 alias phpconfig="vim /usr/local/etc/php/5.6/php.ini"
-alias phpconfig="vim /usr/local/etc/php/7.0/php.ini"
+alias php7config="vim /usr/local/etc/php/7.0/php.ini"
 
 # Git
 alias gcl="git clone"
@@ -118,15 +125,7 @@ alias gpr="git commit --allow-empty -m 'push to execute post-receive' && git pus
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit"
-alias gca="git add --all && git commit -am"
+alias gca="git commit -a"
 alias gd="git diff"
 alias gb="git branch"
 alias gr="git reset"
-
-
-# Tools
-alias prj="cd /Users/mathieugauthier/Documents/Projets"
-alias sshconfig="vi ~/.ssh/config"
-
-alias drush8="composer global remove drush/drush && composer global require drush/drush:8.* && drush version"
-alias drush7="composer global remove drush/drush && composer global require drush/drush:7.* && drush version"
